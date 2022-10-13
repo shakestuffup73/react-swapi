@@ -25,6 +25,7 @@ const StarshipDetails = () => {
       <h1>Starship Details Component</h1>
       <h4>Name: {starshipDetails.name}</h4>
       <h4>Model: {starshipDetails.model}</h4>
+      <h4><Link to='/'>Return</Link></h4>
     </>
 
   );
