@@ -5,13 +5,12 @@ import { Link } from "react-router-dom"
 
 const Starships = () => {
 
-  const [starships, setStarships] = useState({})
+  const [starships, setStarships] = useState([])
 
   useEffect(() => {
     const fetchStarshipData = async () => {
       const starshipData = await getAllStarships()
       setStarships(starshipData.results)
-      // console.log(starshipData)
     }
     fetchStarshipData()
   }, []) 
@@ -23,7 +22,7 @@ const Starships = () => {
       <>
         {starships.map(starship => 
           <div key={starship.model}>
-            <Link to="/" state={{starship}}>{starship.name}</Link>
+            <Link to="/starship" state={{starship}}>{starship.name}</Link>
             <br />
           </div>  
         )}
